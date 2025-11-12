@@ -10,16 +10,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #2b1055, #7597de);
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: white;
 }
 
 .container {
   background: rgba(255, 255, 255, 0.1);
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
   text-align: center;
-  color: white;
   width: 350px;
   backdrop-filter: blur(10px);
 }
@@ -90,4 +90,3 @@ footer {
   font-size: 0.8rem;
   color: #ccc;
 }
-

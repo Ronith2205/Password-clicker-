@@ -1,21 +1,21 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #101010;
-  color: #fff;
-  text-align: center;
-  padding: 40px;
+function generatePassword() {
+  const length = document.getElementById("length").value;
+  const charset =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+  let password = "";
+  const array = new Uint32Array(length);
+  crypto.getRandomValues(array);
+  for (let i = 0; i < length; i++) {
+    password += charset[array[i] % charset.length];
+  }
+  document.getElementById("result").value = password;
 }
-.container {
-  margin-top: 40px;
-}
-input, button {
-  padding: 8px;
-  margin: 10px;
-  border-radius: 6px;
-}
-button {
-  background: #1db954;
-  border: none;
-  color: white;
-  cursor: pointer;
+
+function copyPassword() {
+  const result = document.getElementById("result");
+  if (result.value === "") return;
+  navigator.clipboard.writeText(result.value);
+  const btn = document.querySelector(".copyBtn");
+  btn.innerText = "Copied!";
+  setTimeout(() => (btn.innerText = "Copy"), 1500);
 }
